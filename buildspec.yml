@@ -12,7 +12,8 @@ artifacts:
   files:
     - index.html
     - favicon.ico
-    - michaelbianchiresumecloud.pdf
+    - harshitshuklaresume.pdf
     - styles/*
     - images/*
+    - js/*
     - dist/bundle.js
