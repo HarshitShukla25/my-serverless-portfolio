@@ -1,36 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Babel demo</title>
-        <style>
-        </style>
-    </head>
-    <body>
-        <main>
-            <label>Name: <input id="name" type="text"></main></label>
-            <button id="submit_info">Click me!</button>
-            <div id="content">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Babel Demo</title>
+    <style media="screen">
+      .errorBox {
+        border: 1px solid red;
+        background-color: #eebbbb;
+        margin: 1em;
+        padding: 2em;
+      }
 
-            </div>
-        </main>
-        <script src="https://unpkg.com/babel-standalone"></script>
-        <script type="text/babel" data-presets="latest">
-        const getMessage = (name) => `Welcome to Javascript, ${name}!`;
-        const button = document.getElementById('submit_info');
+      .errorBox--hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <label id="labelBox" class="labelBox"
+        >Name: <input type="text" id="name"
+      /></label>
+      <button id="submit_info">Click me</button>
+      <div id="content"></div>
+      <div id="error" class="errorBox--hidden">
+        Error message goes here
+      </div>
+    </main>
+    <script src="https://unpkg.com/babel-standalone"></script>
 
-        button.addEventListener('click', (evt) => {
-            let name = document.getElementById("name").value;
+    <script type="text/babel" data-presets="latest">
+      const getMessage = name => `welcome to javascript, ${name}!!`;
 
-            if (name.length < 2) {
-                alert("You need to enter a name!")
-            }
-            else {
-                document.getElementById('content').textContent = getMessage(name);
-            }
-            
-        });
-        
-        </script>
-    </body>
+      const button = document.getElementById("submit_info");
+      const contentArea = document.getElementById("content");
+      const messageArea = document.getElementById("error");
+
+      button.addEventListener("click", event => {
+        let name = document.getElementById("name").value;
+
+        messageArea.className = "errorBox--hidden";
+        contentArea.textContent = "";
+        if (name.length < 2) {
+          messageArea.textContent = "you need to enter a name";
+          messageArea.className = "errorBox";
+        } else {
+          contentArea.textContent = getMessage(name);
+        }
+      });
+    </script>
+  </body>
 </html>

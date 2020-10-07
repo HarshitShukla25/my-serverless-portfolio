@@ -1,19 +1,16 @@
-version: 0.1
+version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - npm install
-      #- npm test
+  install:
+    runtime-versions:
+      nodejs: 10
   build:
     commands:
-      - npm run webpack
+      - echo Nothing to do yet
 artifacts:
   files:
     - index.html
     - favicon.ico
-    - harshitshuklaresume.pdf
-    - styles/*
+    - styles/main.css
     - images/*
-    - js/*
-    - dist/bundle.js
+    - babel.html

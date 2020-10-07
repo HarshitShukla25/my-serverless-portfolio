@@ -1,8 +1,7 @@
-# Michael Bianchi's portfolio
-Professional portfolio prototype using react on AWS serverless platform.
+# acg-react-serverless
 
-## Technologies Used
-Git
-SSH
-HTML
-CSS
+the repo used while going through acloudguru serverless course
+
+https://acloud.guru/course/serverless-portfolio-with-react/learn/
+
+# About this project
